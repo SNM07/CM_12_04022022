@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import {
   ResponsiveContainer,
   LineChart,
-  Line,
+	Line,
   XAxis,
   YAxis,
   Tooltip,
@@ -48,7 +48,53 @@ function UserAverageSessions() {
   if (data.length === 0) return null;
 
   console.log(data);
-  return <></>;
+	return (
+		<div className="lineChartContainer">
+		<h2>Durée moyenne des sessions</h2>
+		<ResponsiveContainer width='99%' height='99%'>
+			<LineChart data={data}>
+				<XAxis
+					axisLine={false}
+					tickLine={false}
+					dataKey='day'
+					stroke='rgba(255, 255, 255, 0.5)'
+					tick={{ fontSize: 12 }}
+					minTickGap={3}
+					padding={{ left: 10, right: 10 }}
+				/>
+<YAxis dataKey="sessionLength" domain={[0, 'dataMax + 30']} hide={true}/>				<Line
+					dataKey='sessionLength'
+					type='monotone'
+					stroke='rgba(255, 255, 255, 0.5)'
+					strokeWidth={2}
+					dot={false}
+					activeDot={{
+						stroke: 'rgba(255, 255, 255, 0.5)',
+						strokeWidth: 10,
+						r: 5,
+					}}
+				/>
+				<Tooltip
+						content={<AverageSessionsCustomToolTip />}
+					cursor={{
+						stroke: 'rgba(0, 0, 0, 0.1)',
+						strokeWidth: 50,
+						height: '1000px',
+					}}
+				/>
+			</LineChart>
+		</ResponsiveContainer>
+	</div>
+  );
 }
 
 export default UserAverageSessions;
+
+function AverageSessionsCustomToolTip({ active, payload }) {
+    if (active && payload) {
+      return (
+        <span className="tooltipaveragesession">{`${payload[0].value} min`}</span>
+      );
+    }
+    return null;
+  }

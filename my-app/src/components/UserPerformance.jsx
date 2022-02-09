@@ -37,34 +37,36 @@ function UserPerformance() {
             return { ...data };
         }
       });
-      //const formatData = request.kind;
-      console.log("FORMATDATA", formatData);
       setData(formatData);
     };
     getData();
   }, [userID]);
   if (data.length === 0) return null;
-  
-  console.log(data);
+
+  const index = [5, 4, 3, 2, 1, 0];
+  const dataReorder = index.map((i) => data[i]);
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadarChart cx="50%" cy="50%" outerRadius="65%" data={data}>
-        <PolarGrid gridType="polygon" />
-        <PolarAngleAxis
-          dataKey="kind"
-          stroke="white"
-          tickLine={false}
-          axisLine={false}
-          tick={{ fontSize: 10 }}
-        />
-        <Radar
-          dataKey="value"
-          stroke="#FF0101"
-          fill="#FF0101"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
-    </ResponsiveContainer>
+    <div className="radarChartContainer">
+      <ResponsiveContainer width="99%" height="99%">
+        <RadarChart cx="50%" cy="50%" outerRadius="65%" data={dataReorder}>
+          <PolarGrid gridType="polygon" polarRadius={[10, 20 ,40, 60, 78]} />
+          <PolarAngleAxis
+            dataKey="kind"
+            stroke="white"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fontSize: 10 }}
+          />
+          <Radar
+            dataKey="value"
+            stroke="#FF0101"
+            fill="#FF0101"
+            fillOpacity={0.7}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 

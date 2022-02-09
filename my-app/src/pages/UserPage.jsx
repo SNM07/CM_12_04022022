@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import UserActivity from "../components/UserActivity";
 import UserAverageSessions from "../components/UserAverageSessions";
 import UserPerformance from "../components/UserPerformance";
+import UserScore from "../components/UserScore";
+import CardContainer from "../components/CardContainer";
 
 function UserPage() {
   const [data, setData] = useState([]);
@@ -28,11 +30,17 @@ function UserPage() {
 
   return (
     
-    <>
-      <UserActivity />
-      <UserAverageSessions />
-      <UserPerformance />
-    </>
+    <div className="userPage">
+      <div id="globalStatsContainer">
+      <UserActivity id="userActivity" />
+      <div id="bottomStatsContainer">
+      <UserAverageSessions id="userAverageSessions"/>
+      <UserPerformance id="userPerformance"/>
+      <UserScore id="userScore" />
+        </div>
+        </div>
+      <CardContainer id="cardContainer"/>
+    </div>
   );
 }
 

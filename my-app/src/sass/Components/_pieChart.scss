@@ -1,0 +1,25 @@
+.pieChartContainer {
+    width: 22vw;
+    height: 22vw;
+		background: #fbfbfb;
+		border-radius: 5px;
+		/* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+		grid-column: 3;
+		grid-row: 2;
+		position: relative;
+		& label {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			left: 6.5rem;
+			position: absolute;
+			text-align: center;
+			top: 4.5rem;
+			
+		} */
+	& .pieChart{
+        width: 30vw;
+        height: 30vw;
+    }
+}
