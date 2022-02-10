@@ -307,4 +307,43 @@
   margin-right: 3vw;
 }
 
+.errorPageContainer {
+  margin: 12% 0 0 10em;
+  width: 90vw;
+}
+.errorPageContainer h1 {
+  color: red;
+  text-align: center;
+  font-size: 10rem;
+  margin-bottom: 2vw;
+}
+.errorPageContainer p {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 6vw;
+}
+.errorPageContainer .backHome {
+  text-align: center;
+}
+.errorPageContainer .backHome a {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:visited {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:hover {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:focus {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:active {
+  text-decoration: none;
+  color: red;
+}
+
 /*# sourceMappingURL=style.css.map */
