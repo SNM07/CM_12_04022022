@@ -10,6 +10,10 @@
 	&:hover {
 		transform: scale(1.02);
 	}
+	& .iconContainer{
+		padding: 1.2em;
+		border-radius: 4px;
+	}
 	& .cardInfos {
 		display: flex;
 		flex-direction: column;

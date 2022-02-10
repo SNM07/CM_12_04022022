@@ -67,9 +67,10 @@ function UserActivity() {
             iconType={"circle"}
             iconSize={".5rem"}
             wrapperStyle={{
-              top: "-10%",
-              right: "1rem",
+              top: "-13%",
+              right: "0",
               lineHeight: "40px",
+              fontSize: ".8em",
             }}
           />
           <CartesianGrid stroke="#ccc" vertical={false} />

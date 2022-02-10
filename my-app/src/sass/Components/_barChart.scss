@@ -3,30 +3,35 @@
   height: 30vw;
   background-color: #fbfbfb;
   border-radius: 5px;
+  margin-bottom: 2vw;
   & .barChartTitle {
-    font-size: 14px;
-    padding-top: 2%;
+    font-size: 1em;
+    line-height: 20px;
+    padding-top: 4%;
     padding-left: 6%;
-    margin-bottom: 0 0 3% 0;
+    margin-bottom: 3% ;
   }
   & .recharts-responsive-container {
     margin-left: 5%;
     //width: 80vw;
-  //height: 40vw;
-  //width: 80vw;
-          height: 90%;
+    //height: 40vw;
+    //width: 80vw;
+    height: 90%;
     & .recharts-wrapper {
-        //width: 80vw;
-          height: 90%;
-          padding: 4vw;
-          
+      //width: 80vw;
+      height: 90%;
+      padding: 2vw;
+
       & .recharts-legend-wrapper {
-          //width: 80vw;
-          height: 90%;
+        //width: 80vw;
+        height: 90%;
         line-height: 0px;
       }
-      & .recharts-surface{
-          height: 110%;
+      & .recharts-surface {
+        height: 110%;
+        & .recharts-legend-item-text{
+          font-size: .2em;
+        }
       }
     }
   }

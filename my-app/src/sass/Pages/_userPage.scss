@@ -1,16 +1,33 @@
 .userPage {
-  width: 100%;
-  position: relative;
+  width: 100vw;
   display: flex;
-  margin: 8% 0 0 8em;
-
+  flex-direction: column;
+  margin-top: 12%;
+  margin-right: 8em;
+  & .headerUserInfos{
+    margin-left: 10em;
+    margin-bottom: 4vw;
+    & h1{
+      margin-bottom: 2vw;
+    }
+    & #userNameTitle{
+      color: red;
+    }
+  }
+  & .userStatsContainer{
+    position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 95vw;
   & #globalStatsContainer {
+    margin-left: 8em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 60%;
-    & #userActivity {
-        width: 70%;
+    & .barChartContainer {
+        //width: 60%;
+        margin-bottom: 6vw;
     }
     & #bottomStatsContainer {
         display: flex;
@@ -24,9 +41,10 @@
       }
     }
   }
-  & #cardContainer {
-      width: 20%;
+  & .cardContainer {
+      width: 25%;
   }
+}
 }
 
 .recharts-wrapper{
