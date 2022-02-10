@@ -58,10 +58,7 @@ function UserActivity() {
             dx={-10}
             dy={-4}
           />
-          <Tooltip
-            wrapperStyle={{ width: 130 }}
-            content={<CustomTooltip />}
-          />
+          <Tooltip wrapperStyle={{ width: 130 }} content={<CustomTooltip />} />
           <Legend
             width={"60%"}
             iconType={"circle"}

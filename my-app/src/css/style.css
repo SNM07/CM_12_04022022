@@ -7,7 +7,7 @@
 }
 
 .radarChartContainer {
-  height: 21vw;
+  height: 19vw;
   width: 22vw;
   background: #282d30;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
@@ -70,7 +70,7 @@
 .lineChartContainer {
   position: relative;
   width: 22vw;
-  height: 21vw;
+  height: 19vw;
   margin-right: 1vw;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,7 @@
 
 .pieChartContainer {
   width: 22vw;
-  height: 21vw;
+  height: 19vw;
   margin-left: 1vw;
   background: #fbfbfb;
   border-radius: 5px;
@@ -242,7 +242,7 @@
   margin-right: 8em;
 }
 .userPage .headerUserInfos {
-  margin-left: 10em;
+  margin-left: 9em;
   margin-bottom: 4vw;
 }
 .userPage .headerUserInfos h1 {
@@ -259,6 +259,7 @@
 }
 .userPage .userStatsContainer #globalStatsContainer {
   margin-left: 8em;
+  margin-bottom: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
