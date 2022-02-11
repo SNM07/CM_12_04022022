@@ -18,7 +18,6 @@ function UserPerformance() {
     const getData = async () => {
       const request = await mockUserPerformance(userID);
       if (!request) return alert("data error");
-      console.log(request);
       const formatData = request.data.map((data) => {
         switch (data.kind) {
           case 1:

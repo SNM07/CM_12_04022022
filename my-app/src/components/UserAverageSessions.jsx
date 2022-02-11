@@ -19,7 +19,6 @@ function UserAverageSessions() {
     const getData = async () => {
       const request = await mockUserAverageSessions(userID);
       if (!request) return alert("data error");
-      console.log(request);
       const formatData = request.sessions.map((data) => {
         switch (data.day) {
           case 1:
@@ -40,14 +39,12 @@ function UserAverageSessions() {
             return { ...data };
         }
       });
-      console.log(formatData);
       setData(formatData);
     };
     getData();
   }, [userID]);
   if (data.length === 0) return null;
 
-  console.log(data);
 	return (
 		<div className="lineChartContainer">
 		<h2>Durée moyenne des sessions</h2>

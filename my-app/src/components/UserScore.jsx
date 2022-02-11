@@ -8,21 +8,17 @@ export default function UserScore() {
   const [data, setData] = useState([]);
   const userId = useParams();
   const userID = userId.id;
-  console.log(userId, userID);
 
   useEffect(() => {
     const getData = async () => {
       const request = await mockUserInfos(userID);
-      console.log(request);
       if (!request) return alert("data error");
-      console.log(request);
       setData([request.todayScore]);
     };
     getData();
   }, [userID]);
 
   if (data.length === 0) return null;
-  console.log("SCORE", data);
 
   const dataFloat = parseFloat(data);
 
@@ -30,8 +26,6 @@ export default function UserScore() {
     { name: "finished", value: dataFloat, fillColor: "#ff0101" },
     { name: "inProgress", value: 1 - dataFloat, fillColor: "transparent" },
   ];
-
-  console.log(pieScore);
 
   return (
     <div className="pieChartContainer">

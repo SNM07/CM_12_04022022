@@ -31,7 +31,6 @@ function UserActivity() {
   for (let i = 0; i < data.length; i++) {
     data[i].day = i + 1;
   }
-  console.log(data);
 
   return (
     <div className="barChartContainer">

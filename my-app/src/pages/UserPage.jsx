@@ -13,15 +13,12 @@ function UserPage() {
   const [data, setData] = useState([]);
   const userId = useParams();
   const userID = userId.id;
-  console.log(userId, userID);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     const getData = async () => {
       const request = await mockUserInfos(userID);
-      console.log(request);
       if (!request) return alert("data error");
-      console.log(request);
       document.title =
         "SportSee - " +
         request.userInfos.firstName +
@@ -32,7 +29,6 @@ function UserPage() {
     getData();
   }, [userID]);
 
-  console.log(data);
   if (data.length === 0) return null;
 
   return (
