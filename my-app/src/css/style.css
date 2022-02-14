@@ -7,6 +7,8 @@
 }
 
 .radarChartContainer {
+  /* grid-row: 2/1;
+  grid-column: 2/3; */
   height: 19vw;
   width: 22vw;
   background: #282d30;
@@ -72,6 +74,8 @@
   width: 22vw;
   height: 19vw;
   margin-right: 1vw;
+  /* grid-row: 2/1;
+  grid-column: 1/1; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -82,8 +86,8 @@
 .lineChartContainer h2 {
   position: absolute;
   font-weight: 500;
-  font-size: 15px;
-  padding: 29px 34px 0 34px;
+  font-size: 1.4vw;
+  padding: 1vw 1vw 0 1vw;
   color: rgba(255, 255, 255, 0.7);
 }
 .lineChartContainer .recharts-tooltip-wrapper {
@@ -94,6 +98,8 @@
 .pieChartContainer {
   width: 22vw;
   height: 19vw;
+  /* grid-row: 2/1;
+  grid-column: 3/4; */
   margin-left: 1vw;
   background: #fbfbfb;
   border-radius: 5px;

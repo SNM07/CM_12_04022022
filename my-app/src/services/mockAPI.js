@@ -1,12 +1,25 @@
 import axios from 'axios';
 import dataUser from "./mockDatas.json";
 
+/*     const instance = axios.create({
+		baseURL: '/user',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+}); */
 
 export const mockUserInfos = async (userID) => {
 
     try {
-         
-        const mainData = dataUser.USER_MAIN_DATA;
+		/* const datatest = await instance.get(`/${userID}`);
+		console.log(datatest.data)
+          */
+		/* const dataset = await axios.get("https://snm07.github.io/testDBSNM.github.io/mockeddatas.json")
+console.log(dataset.data)
+console.log(dataset.data.USER_MAIN_DATA)
+ */
+		
+		const mainData = dataUser.USER_MAIN_DATA;
         
         let response = mainData.find((user) => user.id === parseInt(userID));
          console.log(response, "OK")

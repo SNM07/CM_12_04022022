@@ -63,9 +63,9 @@ function UserActivity() {
             iconType={"circle"}
             iconSize={".5rem"}
             wrapperStyle={{
-              top: "-13%",
+              top: "-10%",
               right: "0",
-              lineHeight: "40px",
+              lineHeight: "12px",
               fontSize: ".8em",
             }}
           />

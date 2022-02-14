@@ -47,15 +47,15 @@ function UserPerformance() {
 
   return (
     <div className="radarChartContainer">
-      <ResponsiveContainer width="99%" height="99%">
+      <ResponsiveContainer width="99%" height="99%" minWidth="0">
         <RadarChart cx="50%" cy="50%" outerRadius="65%" data={dataReorder}>
-          <PolarGrid gridType="polygon" polarRadius={[10, 20 ,40, 60, 78]} />
+          <PolarGrid gridType="polygon" />
           <PolarAngleAxis
             dataKey="kind"
             stroke="white"
             tickLine={false}
             axisLine={false}
-            tick={{ fontSize: 10 }}
+            tick={{ fontSize: "1vw" }}
           />
           <Radar
             dataKey="value"
