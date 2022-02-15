@@ -4,53 +4,44 @@
   flex-direction: column;
   margin-top: 12%;
   margin-right: 8em;
-  & .headerUserInfos{
+  & .headerUserInfos {
     margin-left: 9em;
     margin-bottom: 4vw;
-    & h1{
+    & h1 {
       margin-bottom: 2vw;
     }
-    & #userNameTitle{
+    & #userNameTitle {
       color: red;
     }
   }
-  & .userStatsContainer{
+  & .userStatsContainer {
     position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 95vw;
-  & #globalStatsContainer {
-    margin-left: 8em;
-    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    & #globalStatsContainer {
+      margin-left: 8em;
+      margin-bottom: 10%;
       display: flex;
-      //grid-template-rows: 2fr;
       flex-direction: column;
       justify-content: space-between;
       width: 60%;
-    & .barChartContainer {
-        //width: 60%;
+      & .barChartContainer {
         margin-bottom: 6vw;
-    }
-    & #bottomStatsContainer {
+      }
+      & #bottomStatsContainer {
         display: flex;
-        //grid-template-columns: 3fr;
-        //grid-template-rows: 1fr;
         flex-direction: row;
         justify-content: space-between;
-      & #userAverageSessions {
-      }
-      & #userPerformance {
-      }
-      & #userScore {
+        margin-top: 4vw;
       }
     }
-  }
-  & .cardContainer {
+    & .cardContainer {
       width: 25%;
+    }
   }
-}
 }
 
-.recharts-wrapper{
-    position: absolute
+.recharts-wrapper {
+  position: absolute;
 }

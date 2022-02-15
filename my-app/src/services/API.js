@@ -5,6 +5,12 @@ const instance = axios.create({
   baseURL: "http://localhost:8080/user",
 });
 
+/**
+ * Get user infos
+ *
+ * @param {string} userID id User id
+ * @returns {object} Response from API or mocked datas if API is unavailable
+ */
 export const userInfosData = async (userID) => {
   try {
     const dataSet = await instance.get(`/${userID}`);
@@ -20,6 +26,12 @@ export const userInfosData = async (userID) => {
   }
 };
 
+/**
+ * Get user activity
+ *
+ * @param {string} userID id User id
+ * @returns {object} Response from API or mocked datas if API is unavailable
+ */
 export const userActivityData = async (userID) => {
   try {
     const dataSet = await instance.get(`/${userID}/activity`);
@@ -35,6 +47,12 @@ export const userActivityData = async (userID) => {
   }
 };
 
+/**
+ * Get user average sessions
+ *
+ * @param {string} userID id User id
+ * @returns {object} Response from API or mocked datas if API is unavailable
+ */
 export const userAverageSessionsData = async (userID) => {
   try {
     const dataSet = await instance.get(`/${userID}/average-sessions`);
@@ -52,6 +70,12 @@ export const userAverageSessionsData = async (userID) => {
   }
 };
 
+/**
+ * Get user performance
+ *
+ * @param {string} userID id User id
+ * @returns {object} Response from API or mocked datas if API is unavailable
+ */
 export const userPerformanceData = async (userID) => {
   try {
     const dataSet = await instance.get(`/${userID}/performance`);

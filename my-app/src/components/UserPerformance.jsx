@@ -9,6 +9,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * Render a RadarChart with user performance Data
+ * @return {JSX}
+ */
 function UserPerformance() {
   const [data, setData] = useState([]);
   const userId = useParams();

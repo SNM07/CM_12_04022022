@@ -1,31 +1,30 @@
-.homePage{
-    margin: 12% 0 0 10em;
-    & h1{
-        & span{
-            color: red;
-        }
+.homePage {
+  margin: 12% 0 0 10em;
+  & h1 {
+    & span {
+      color: red;
     }
-    & p{
-        margin-top: 4vw;
-margin-bottom: 4vw;
+  }
+  & p {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+  }
+  & .homePageUserLinks {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6vw;
+    & a {
+      margin-bottom: 2vw;
     }
-    & .homePageUserLinks{
-        display: flex;
-        flex-direction: column;
-margin-bottom: 6vw;
-& a{
+  }
+  & #allLinksTitle {
+    display: block;
     margin-bottom: 2vw;
-}
+    font-weight: bold;
+  }
+  & .allLinks {
+    & a {
+      margin-right: 3vw;
     }
-    & #allLinksTitle{
-        display: block;
-margin-bottom: 2vw;
-font-weight: bold;
-    }
-    & .allLinks{
-        & a {
-            margin-right: 3vw;
-        }
-
-    }
+  }
 }

@@ -4,6 +4,10 @@ import { userInfosData } from "../services/API";
 import { useParams } from "react-router";
 import { PieChart, Pie, Cell, Label, ResponsiveContainer } from "recharts";
 
+/**
+ * Render a PieChart with user todayScore Data
+ * @return {JSX}
+ */
 export default function UserScore() {
   const [data, setData] = useState([]);
   const userId = useParams();
@@ -37,7 +41,6 @@ export default function UserScore() {
             cy="50%"
             innerRadius={70}
             outerRadius={80}
-            //cornerRadius={50}
             startAngle={90}
             endAngle={450}
             dataKey="value"

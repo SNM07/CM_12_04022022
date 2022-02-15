@@ -8,9 +8,12 @@ import UserAverageSessions from "../components/UserAverageSessions";
 import UserPerformance from "../components/UserPerformance";
 import UserScore from "../components/UserScore";
 import CardContainer from "../components/CardContainer";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-
+/**
+ * Render the dashboard
+ * @return {JSX}
+ */
 function UserPage() {
   const [data, setData] = useState([]);
   const userId = useParams();
@@ -21,7 +24,7 @@ function UserPage() {
     window.scrollTo(0, 0);
     const getData = async () => {
       const request = await userInfosData(userID);
-      if (!request) return navigate('/ErrorPage');
+      if (!request) return navigate("/ErrorPage");
       document.title =
         "SportSee - " +
         request.userInfos.firstName +

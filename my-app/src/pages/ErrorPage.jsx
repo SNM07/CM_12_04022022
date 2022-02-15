@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Render error 404 page
+ * @return {JSX}
+ */
 export default function ErrorPage() {
   document.title = "SportSee - Erreur";
   return (

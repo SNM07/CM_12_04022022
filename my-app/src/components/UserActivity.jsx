@@ -13,6 +13,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * Render a BarChart with user activity Data
+ * @return {JSX}
+ */
 function UserActivity() {
   const [data, setData] = useState([]);
   const userId = useParams();
