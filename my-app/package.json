@@ -21,6 +21,7 @@
     "eject": "react-scripts eject",
     "sass": "sass --watch ./src/SASS/main.scss:./src/CSS/style.css --style expanded"
   },
+  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": [
       "react-app",

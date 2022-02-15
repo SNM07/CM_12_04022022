@@ -1,7 +1,7 @@
 import React from "react";
 import CardInfos from "./CardInfos";
 import { useState, useEffect } from "react";
-import { mockUserInfos } from "./../services/mockAPI";
+import { userInfosData } from "../services/API";
 import { useParams } from "react-router";
 
 export default function CardContainer() {
@@ -11,7 +11,7 @@ export default function CardContainer() {
       
         useEffect(() => {
           const getData = async () => {
-            const request = await mockUserInfos(userID);
+            const request = await userInfosData(userID);
             if (!request) return alert("data error");
             setData(request.keyData);
           };

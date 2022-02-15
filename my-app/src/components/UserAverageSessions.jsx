@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { mockUserAverageSessions } from "../services/mockAPI";
+import { userAverageSessionsData } from "../services/API";
 import { useParams } from "react-router";
 import {
   ResponsiveContainer,
@@ -17,7 +17,7 @@ function UserAverageSessions() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await mockUserAverageSessions(userID);
+      const request = await userAverageSessionsData(userID);
       if (!request) return alert("data error");
       const formatData = request.sessions.map((data) => {
         switch (data.day) {

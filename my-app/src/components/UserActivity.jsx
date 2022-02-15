@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { mockUserActivity } from "../services/mockAPI";
+import { userActivityData } from "../services/API";
 import { useParams } from "react-router";
 import {
   BarChart,
@@ -20,7 +20,7 @@ function UserActivity() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await mockUserActivity(userID);
+      const request = await userActivityData(userID);
       if (!request) return alert("data error");
       setData(request.sessions);
     };

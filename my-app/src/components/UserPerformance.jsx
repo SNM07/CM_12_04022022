@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { mockUserPerformance } from "../services/mockAPI";
+import { userPerformanceData } from "../services/API";
 import { useParams } from "react-router";
 import {
   Radar,
@@ -16,7 +16,7 @@ function UserPerformance() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await mockUserPerformance(userID);
+      const request = await userPerformanceData(userID);
       if (!request) return alert("data error");
       const formatData = request.data.map((data) => {
         switch (data.kind) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { mockUserInfos } from "./../services/mockAPI";
+import { userInfosData } from "../services/API";
 import { useParams } from "react-router";
 import { PieChart, Pie, Cell, Label, ResponsiveContainer } from "recharts";
 
@@ -11,7 +11,7 @@ export default function UserScore() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await mockUserInfos(userID);
+      const request = await userInfosData(userID);
       if (!request) return alert("data error");
       setData([request.todayScore]);
     };
