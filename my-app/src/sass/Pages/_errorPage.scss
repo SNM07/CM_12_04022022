@@ -1,0 +1,38 @@
+.errorPageContainer {
+  margin: 12% 0 0 10em;
+  width: 90vw;
+  & h1 {
+    color: red;
+    text-align: center;
+    font-size: 10rem;
+    margin-bottom: 2vw;
+  }
+  & p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 6vw;
+  }
+  & .backHome {
+    text-align: center;
+    & a {
+      text-decoration: none;
+      color: red;
+      &:visited {
+        text-decoration: none;
+        color: red;
+      }
+      &:hover {
+        text-decoration: none;
+        color: red;
+      }
+      &:focus {
+        text-decoration: none;
+        color: red;
+      }
+      &:active {
+        text-decoration: none;
+        color: red;
+      }
+    }
+  }
+}

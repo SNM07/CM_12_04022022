@@ -1,0 +1,47 @@
+.barChartContainer {
+  width: 100%;
+  height: 30vw;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  margin-bottom: 2vw;
+  & .barChartTitle {
+    font-size: 1em;
+    line-height: 20px;
+    padding-top: 4%;
+    padding-left: 6%;
+    margin-bottom: 3%;
+  }
+  & .recharts-responsive-container {
+    margin-left: 5%;
+    height: 90%;
+    & .recharts-wrapper {
+      height: 90%;
+      padding: 2vw;
+
+      & .recharts-legend-wrapper {
+        height: 90%;
+        line-height: 0px;
+      }
+      & .recharts-surface {
+        height: 110%;
+        & .recharts-legend-item-text {
+          font-size: 0.2em;
+        }
+      }
+    }
+  }
+}
+.customToolTip {
+  background-color: red;
+  color: white;
+  list-style-type: none;
+  height: 80px;
+  width: 40px;
+  padding: 0;
+  text-align: center;
+}
+.toolTipDatas {
+  display: inline-block;
+  font-size: 9px;
+  margin-top: 18px;
+}
