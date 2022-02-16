@@ -8,7 +8,7 @@ You can easily track your physical activity
 ![Mockup of the project](https://i.imgur.com/ILfQpOr.png)
 
 <p align="center">
-<a href="https://snm07.github.io/accueil"> Live démo
+<a href="https://snm07.github.io/CM_12_04022022"> Live demo (click then go to homepage)
 </a>
 </p>
 
