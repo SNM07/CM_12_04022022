@@ -1,0 +1,11 @@
+.pieChartContainer {
+  width: 22vw;
+  height: 19vw;
+  margin-left: 1vw;
+  background: #fbfbfb;
+  border-radius: 5px;
+  & .pieChart {
+    width: 30vw;
+    height: 30vw;
+  }
+}

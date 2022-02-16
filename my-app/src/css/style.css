@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  width: auto;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.radarChartContainer {
+  height: 19vw;
+  width: 22vw;
+  background: #282d30;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+}
+
+.recharts-polar-grid-angle line:nth-child(-n+6) {
+  stroke: #282d30;
+}
+
+.barChartContainer {
+  width: 100%;
+  height: 30vw;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  margin-bottom: 2vw;
+}
+.barChartContainer .barChartTitle {
+  font-size: 1em;
+  line-height: 20px;
+  padding-top: 4%;
+  padding-left: 6%;
+  margin-bottom: 3%;
+}
+.barChartContainer .recharts-responsive-container {
+  margin-left: 5%;
+  height: 90%;
+}
+.barChartContainer .recharts-responsive-container .recharts-wrapper {
+  height: 90%;
+  padding: 2vw;
+}
+.barChartContainer .recharts-responsive-container .recharts-wrapper .recharts-legend-wrapper {
+  height: 90%;
+  line-height: 0px;
+}
+.barChartContainer .recharts-responsive-container .recharts-wrapper .recharts-surface {
+  height: 110%;
+}
+.barChartContainer .recharts-responsive-container .recharts-wrapper .recharts-surface .recharts-legend-item-text {
+  font-size: 0.2em;
+}
+
+.customToolTip {
+  background-color: red;
+  color: white;
+  list-style-type: none;
+  height: 80px;
+  width: 40px;
+  padding: 0;
+  text-align: center;
+}
+
+.toolTipDatas {
+  display: inline-block;
+  font-size: 9px;
+  margin-top: 18px;
+}
+
+.lineChartContainer {
+  position: relative;
+  width: 22vw;
+  height: 19vw;
+  margin-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ff0000;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+}
+.lineChartContainer h2 {
+  position: absolute;
+  font-weight: 500;
+  font-size: 1.4vw;
+  padding: 1vw 1vw 0 1vw;
+  color: rgba(255, 255, 255, 0.7);
+}
+.lineChartContainer .recharts-tooltip-wrapper {
+  background-color: white;
+  padding: 1vw;
+}
+
+.pieChartContainer {
+  width: 22vw;
+  height: 19vw;
+  margin-left: 1vw;
+  background: #fbfbfb;
+  border-radius: 5px;
+}
+.pieChartContainer .pieChart {
+  width: 30vw;
+  height: 30vw;
+}
+
+.cardInfosContainer {
+  align-items: center;
+  background: #fbfbfb;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  display: flex;
+  padding: 32px;
+  transition: transform 300ms ease-in-out;
+  cursor: pointer;
+}
+.cardInfosContainer:hover {
+  transform: scale(1.02);
+}
+.cardInfosContainer .iconContainer {
+  padding: 1.2em;
+  border-radius: 4px;
+}
+.cardInfosContainer .cardInfos {
+  display: flex;
+  flex-direction: column;
+}
+.cardInfosContainer .cardInfos .cardInfosValue {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0px 0px 5px 20px;
+}
+.cardInfosContainer .cardInfos .cardInfosType {
+  font-size: 14px;
+  padding: 0px 0px 0px 20px;
+}
+
+.topBar {
+  background-color: black;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+.topBar .logo {
+  margin-left: 10%;
+  margin-top: 3%;
+  width: 60%;
+}
+.topBar .menu {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3%;
+  margin-right: 4%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.topBar .menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.topBar .menu a p {
+  margin: 0;
+}
+
+.leftBar {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 6em;
+}
+.leftBar .iconsbar {
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: auto;
+}
+.leftBar .iconsbar a .icons {
+  width: 100%;
+  height: 110%;
+  border-radius: 6px;
+  border: none;
+}
+.leftBar .iconsbar a .icons img {
+  width: 100%;
+  height: 80%;
+}
+.leftBar .copyright {
+  position: absolute;
+  left: -3rem;
+  bottom: 10%;
+  width: 200px;
+  margin: 0;
+  transform: rotate(-90deg);
+  text-align: center;
+  color: white;
+  font-size: 0.5em;
+}
+
+.cardContainer {
+  display: grid;
+  gap: 20px;
+  grid-column: 4;
+  grid-row: 1 span 2;
+  grid-template-rows: repeat(4, 108px);
+}
+
+.userPage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12%;
+  margin-right: 8em;
+}
+.userPage .headerUserInfos {
+  margin-left: 9em;
+  margin-bottom: 4vw;
+}
+.userPage .headerUserInfos h1 {
+  margin-bottom: 2vw;
+}
+.userPage .headerUserInfos #userNameTitle {
+  color: red;
+}
+.userPage .userStatsContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 95vw;
+}
+.userPage .userStatsContainer #globalStatsContainer {
+  margin-left: 8em;
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+}
+.userPage .userStatsContainer #globalStatsContainer .barChartContainer {
+  margin-bottom: 6vw;
+}
+.userPage .userStatsContainer #globalStatsContainer #bottomStatsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 4vw;
+}
+.userPage .userStatsContainer .cardContainer {
+  width: 25%;
+}
+
+.recharts-wrapper {
+  position: absolute;
+}
+
+.homePage {
+  margin: 12% 0 0 10em;
+}
+.homePage h1 span {
+  color: red;
+}
+.homePage p {
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+.homePage .homePageUserLinks {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6vw;
+}
+.homePage .homePageUserLinks a {
+  margin-bottom: 2vw;
+}
+.homePage #allLinksTitle {
+  display: block;
+  margin-bottom: 2vw;
+  font-weight: bold;
+}
+.homePage .allLinks a {
+  margin-right: 3vw;
+}
+
+.errorPageContainer {
+  margin: 12% 0 0 10em;
+  width: 90vw;
+}
+.errorPageContainer h1 {
+  color: red;
+  text-align: center;
+  font-size: 10rem;
+  margin-bottom: 2vw;
+}
+.errorPageContainer p {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 6vw;
+}
+.errorPageContainer .backHome {
+  text-align: center;
+}
+.errorPageContainer .backHome a {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:visited {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:hover {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:focus {
+  text-decoration: none;
+  color: red;
+}
+.errorPageContainer .backHome a:active {
+  text-decoration: none;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
