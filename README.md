@@ -1,13 +1,14 @@
 # SportSee : The physical activity tracking app
 
 <p align="center">
-The SportSee app measures your performance and fitness indicators. You can easily track your physical activity
+The SportSee app measures your performance and fitness indicators. 
+You can easily track your physical activity
 </p>
 
 ![Mockup of the project](https://i.imgur.com/ILfQpOr.png)
 
 <p align="center">
-<a href=""> Live démo
+<a href="https://snm07.github.io/accueil"> Live démo
 </a>
 </p>
 
