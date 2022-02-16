@@ -194,6 +194,7 @@
   height: 110%;
   border-radius: 6px;
   border: none;
+  cursor: pointer;
 }
 .leftBar .iconsbar a .icons img {
   width: 100%;
