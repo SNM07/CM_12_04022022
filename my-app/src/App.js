@@ -6,7 +6,7 @@ import routes from "./Routes";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CM_12_04022022">
       <TopBar />
       <LeftBar />
       {routes}

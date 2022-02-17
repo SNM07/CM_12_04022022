@@ -8,7 +8,7 @@ You can easily track your physical activity
 ![Mockup of the project](https://i.imgur.com/ILfQpOr.png)
 
 <p align="center">
-<a href="https://snm07.github.io/CM_12_04022022"> Live demo (click then go to homepage)
+<a href="https://snm07.github.io/CM_12_04022022"> Live demo
 </a>
 </p>
 
@@ -43,6 +43,11 @@ Clone this repo in your "master" folder then follow the README instructions of t
 
 #### Get the frontend:
 Clone [this](https://github.com/SNM07/CM_12_04022022) in your master folder.
+
+Go to my-app
+ ```sh
+   cd my-app
+   ```
 Then install NPM packages
    ```sh
    npm i
