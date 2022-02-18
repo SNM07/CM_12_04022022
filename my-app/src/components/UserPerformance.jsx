@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { userPerformanceData } from "../services/API";
+import { userPerformanceAPI } from "../services/API";
 import { useParams } from "react-router";
 import {
   Radar,
@@ -20,7 +20,8 @@ function UserPerformance() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await userPerformanceData(userID);
+      const object = new userPerformanceAPI()
+      const request = await object.userPerformanceData(userID);
       if (!request) return alert("data error");
       const formatData = request.data.map((data) => {
         switch (data.kind) {

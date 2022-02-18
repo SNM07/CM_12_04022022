@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { userAverageSessionsData } from "../services/API";
+import { userAverageSessionsAPI }  from "../services/API";
 import { useParams } from "react-router";
 import {
   ResponsiveContainer,
@@ -21,7 +21,8 @@ function UserAverageSessions() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await userAverageSessionsData(userID);
+      const object = new userAverageSessionsAPI()
+      const request = await object.userAverageSessionsData(userID);
       if (!request) return alert("data error");
       const formatData = request.sessions.map((data) => {
         switch (data.day) {

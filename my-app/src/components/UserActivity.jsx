@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { userActivityData } from "../services/API";
+import { userActivityAPI } from "../services/API";
 import { useParams } from "react-router";
 import {
   BarChart,
@@ -24,7 +24,8 @@ function UserActivity() {
 
   useEffect(() => {
     const getData = async () => {
-      const request = await userActivityData(userID);
+      const object = new userActivityAPI()
+      const request = await object.userActivityData(userID);
       if (!request) return alert("data error");
       setData(request.sessions);
     };

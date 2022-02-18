@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { userInfosData } from "../services/API";
+import { userInfosAPI } from "../services/API";
 import { useParams } from "react-router";
 import UserInfos from "../components/UserInfos";
 import UserActivity from "../components/UserActivity";
@@ -23,23 +23,24 @@ function UserPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     const getData = async () => {
-      const request = await userInfosData(userID);
+      const object = new userInfosAPI()
+      const request = await object.userInfosData(userID);
       if (!request) return navigate("/ErrorPage");
       document.title =
         "SportSee - " +
-        request.userInfos.firstName +
+        request.firstName +
         " " +
-        request.userInfos.lastName;
+        request.lastName;
       setData(request);
     };
     getData();
   }, [userID, navigate]);
 
   if (data.length === 0) return null;
-
-  return (
+  
+   return (
     <div className="userPage">
-      <UserInfos name={data.userInfos.firstName} />
+      <UserInfos name={data.firstName} />
       <div className="userStatsContainer">
         <div id="globalStatsContainer">
           <UserActivity id="userActivity" />
