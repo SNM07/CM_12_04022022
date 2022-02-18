@@ -7,9 +7,34 @@ import {
   UserPerformanceMapper,
 } from "./Mapper/UserMapper";
 
+const serverURL = "http://localhost:8080/";
+
+const serverUserURL = serverURL + "user/";
+
 const instance = axios.create({
-  baseURL: "http://localhost:8080/user",
+  baseURL: serverUserURL,
 });
+
+let initStatus = null;
+const updatedStatus = (result) => {
+  initStatus = result;
+};
+
+const isAvailable = async () => {
+  const timeout = new Promise((resolve, reject) => {
+    setTimeout(reject, 300, "Request timed out");
+  });
+
+  const request = await fetch(serverURL);
+  
+  return Promise.race([timeout, request]).then(() => {
+    //console.log("It worked :)");
+    updatedStatus(true);
+  });
+  //.catch((error) => console.log("It timed out :("));
+};
+
+isAvailable();
 
 export class userInfosAPI {
   /**
@@ -19,11 +44,14 @@ export class userInfosAPI {
    * @returns {UserInfos} Response from API or mocked datas if API is unavailable
    */
   async userInfosData(userID) {
-    try {
-      const dataSet = await instance.get(`/${userID}`);
-      return UserInfosMapper.fromJson(dataSet.data.data);
-    } catch (e) {
-      console.log(e);
+    if (initStatus === true) {
+      try {
+        const dataSet = await instance.get(`/${userID}`);
+        return UserInfosMapper.fromJson(dataSet.data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
       try {
         const mainData = dataUser.USER_MAIN_DATA;
         const dataFilter = mainData.find(
@@ -45,11 +73,14 @@ export class userActivityAPI {
    * @returns {UserActivity} Response from API or mocked datas if API is unavailable
    */
   async userActivityData(userID) {
-    try {
-      const dataSet = await instance.get(`/${userID}/activity`);
-      return UserActivityMapper.fromJson(dataSet.data.data);
-    } catch (e) {
-      console.log(e);
+    if (initStatus === true) {
+      try {
+        const dataSet = await instance.get(`/${userID}/activity`);
+        return UserActivityMapper.fromJson(dataSet.data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
       try {
         const userActivity = dataUser.USER_ACTIVITY;
         const dataFilter = userActivity.find(
@@ -71,11 +102,14 @@ export class userAverageSessionsAPI {
    * @returns {UserAverageSessions} Response from API or mocked datas if API is unavailable
    */
   async userAverageSessionsData(userID) {
-    try {
-      const dataSet = await instance.get(`/${userID}/average-sessions`);
-      return UserAverageSessionsMapper.fromJson(dataSet.data.data);
-    } catch (e) {
-      console.log(e);
+    if (initStatus === true) {
+      try {
+        const dataSet = await instance.get(`/${userID}/average-sessions`);
+        return UserAverageSessionsMapper.fromJson(dataSet.data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
       try {
         const userAverageSessions = dataUser.USER_AVERAGE_SESSIONS;
         const dataFilter = userAverageSessions.find(
@@ -97,11 +131,14 @@ export class userPerformanceAPI {
    * @returns {UserPerformance} Response from API or mocked datas if API is unavailable
    */
   async userPerformanceData(userID) {
-    try {
-      const dataSet = await instance.get(`/${userID}/performance`);
-      return UserPerformanceMapper.fromJson(dataSet.data.data);
-    } catch (e) {
-      console.log(e);
+    if (initStatus === true) {
+      try {
+        const dataSet = await instance.get(`/${userID}/performance`);
+        return UserPerformanceMapper.fromJson(dataSet.data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
       try {
         const userPerformance = dataUser.USER_PERFORMANCE;
         const dataFilter = userPerformance.find(
