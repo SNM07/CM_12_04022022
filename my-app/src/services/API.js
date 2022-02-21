@@ -7,6 +7,12 @@ import {
   UserPerformanceMapper,
 } from "./Mapper/UserMapper";
 
+//MANUAL SWITCH Mock to API:
+//Default: initStatus = null (use mocked data)
+//API: intiStatus = true (use server)
+let initStatus = null;
+
+
 const serverURL = "http://localhost:8080/";
 
 const serverUserURL = serverURL + "user/";
@@ -15,28 +21,29 @@ const instance = axios.create({
   baseURL: serverUserURL,
 });
 
-let initStatus = null;
-const updatedStatus = (result) => {
+if (initStatus === true) {
+  console.log("Connecté au serveur node.js (" + serverURL + ")");
+} else if (initStatus === null) {
+  console.log("Connecté aux données mockées (local)");
+}
+
+//Test auto switch: works fine but still returns 404 error due to serverURL 
+/*const updatedStatus = (result) => {
   initStatus = result;
 };
 
-const isAvailable = () => {
-  const timeout = new Promise((resolve, reject) => {
-    setTimeout(reject, 300, "Request timed out");
-  });
-
-  const request = fetch(serverURL);
-  
-  return Promise
-    .race([timeout, request])
+ async function isAvailable() {
+  fetch(serverURL)
     .then(() => {
-    console.log("It worked :)");
-    updatedStatus(true);
-  })
-    .catch((error) => { console.log("It timed out :(") });
-};
+      console.log("Connecté au serveur node.js (" + serverURL + ")");
+      updatedStatus(true);
+    })
+    .catch((error) => {
+      console.log("Connecté aux données mockées (local)");
+    });
+}
 
-isAvailable();
+isAvailable(); */
 
 export class userInfosAPI {
   /**
