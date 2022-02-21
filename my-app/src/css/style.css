@@ -180,6 +180,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   width: 6em;
+  z-index: 10;
 }
 .leftBar .iconsbar {
   height: 35%;

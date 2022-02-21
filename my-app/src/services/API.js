@@ -20,18 +20,20 @@ const updatedStatus = (result) => {
   initStatus = result;
 };
 
-const isAvailable = async () => {
+const isAvailable = () => {
   const timeout = new Promise((resolve, reject) => {
     setTimeout(reject, 300, "Request timed out");
   });
 
-  const request = await fetch(serverURL);
+  const request = fetch(serverURL);
   
-  return Promise.race([timeout, request]).then(() => {
-    //console.log("It worked :)");
+  return Promise
+    .race([timeout, request])
+    .then(() => {
+    console.log("It worked :)");
     updatedStatus(true);
-  });
-  //.catch((error) => console.log("It timed out :("));
+  })
+    .catch((error) => { console.log("It timed out :(") });
 };
 
 isAvailable();
